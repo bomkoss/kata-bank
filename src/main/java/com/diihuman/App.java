@@ -23,16 +23,20 @@ public class App
         AccountStatementService accountStatementService = new AccountStatementService();
         AccountService accountService = new AccountService(accountStatementService);
 
-        // make some deposits
+        /*------------------------------------------------------------------------------*
+        *                                  User Stories                                 *
+        *-------------------------------------------------------------------------------*/
+
+        // US_1 - Deposits
         accountService.deposit(accountNumber, new BigDecimal(500));
         accountService.deposit(accountNumber, new BigDecimal("100.75"));
         accountService.deposit(accountNumber, new BigDecimal("40.15"));
 
-        // make some withdrawal
+        // US_2 - Withdrawal
         accountService.withdraw(accountNumber, new BigDecimal("375.85"));
         accountService.withdraw(accountNumber, new BigDecimal("25.00"));
 
-        // Display account's operations
+        // US_3 - Transactions history
         accountStatementService.display(accountNumber);
     }
 }

@@ -65,10 +65,10 @@ public class AccountStatement {
     public String toString() {
         return "AccountStatement{" +
                 "accountNumber='" + accountNumber + '\'' +
+                ", operation=" + operation +
                 ", amount=" + amount +
                 ", balance=" + balance +
-                ", operation=" + operation +
-                ", cratedAt=" + cratedAt +
+                ", date=" + cratedAt +
                 '}';
     }
 }
