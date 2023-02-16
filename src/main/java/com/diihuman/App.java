@@ -19,16 +19,16 @@ public class App
         AbstractData.accounts.put(accountNumber,
                 new Account(accountNumber, "My scholar account", new BigDecimal(5500)));
 
-        // AccountStatement
+        // create AccountStatementService and AccountService
         AccountStatementService accountStatementService = new AccountStatementService();
         AccountService accountService = new AccountService(accountStatementService);
 
-        // make a deposit of 500 Units
+        // make some deposits
         accountService.deposit(accountNumber, new BigDecimal(500));
         accountService.deposit(accountNumber, new BigDecimal("100.75"));
         accountService.deposit(accountNumber, new BigDecimal("40.15"));
 
-        // make a withdrawal of 6000 Units (account should be empty)
+        // make some withdrawal
         accountService.withdraw(accountNumber, new BigDecimal("375.85"));
         accountService.withdraw(accountNumber, new BigDecimal("25.00"));
 
